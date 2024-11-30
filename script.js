@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Load available voices
     speechSynthesis.onvoiceschanged = function() {
         const voices = speechSynthesis.getVoices();
-        femaleVoice = voices.find(voice => voice.name.toLowerCase().includes("female")) || voices[0];
     };
 });
 
@@ -63,6 +62,7 @@ document.getElementById("nextBtn").addEventListener("click", function() {
 
 document.getElementById("hearAgainBtn").addEventListener("click", function() {
     const word = words[currentIndex];
+    console.log("the word is " + word);
     speakWord(word); // Pronounce the current word again
 });
 
@@ -75,9 +75,6 @@ function showWord() {
 
 function speakWord(word) {
     const utterance = new SpeechSynthesisUtterance(word);
-    if (femaleVoice) {
-        utterance.voice = femaleVoice; // Use the selected female voice
-    }
     speechSynthesis.speak(utterance);
 }
 
@@ -86,4 +83,3 @@ function updateCounters() {
     document.getElementById("counterDisplay").textContent = `Correct Spellings: ${correctCount}`;
     document.getElementById("incorrectCounterDisplay").textContent = `Incorrect Spellings: ${incorrectCount}`;
 }
-
