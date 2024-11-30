@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Memorization Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Memorization Tool</h1>
+        <textarea id="wordList" class="input-textarea" placeholder="Enter words separated by commas"></textarea>
+        <button id="startBtn" class="action-button">Start</button>
+
+        <div id="gameArea" style="display: none;">
+            <h2 id="wordDisplay" class="word-display"></h2>
+            <input type="text" id="userInput" placeholder="Type the word here" class="input-field">
+            <button id="checkBtn" class="action-button">Check</button>
+            <button id="hearAgainBtn" class="action-button" style="display: none;">Hear Again</button>
+            <button id="nextBtn" class="action-button" style="display: none;">Next</button>
+            <p id="feedback" class="feedback-message"></p>
+            <p id="counterDisplay" class="counter-display">Correct Spellings: 0</p>
+            <p id="incorrectCounterDisplay" class="counter-display">Incorrect Spellings: 0</p> <!-- Incorrect counter display -->
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
